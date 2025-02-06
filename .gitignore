@@ -1,0 +1,44 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Diretório de dependências
+jspm_packages/
+
+# Diretório de dist/
+dist/
+
+# Builds
+build/
+out/
+
+# Sistema de controle de versões
+.DS_Store
+
+# Cobertura de testes
+coverage/
+
+# Ambiente local
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Sistema operacional
+Thumbs.db
+Desktop.ini
+
+# IDEs e editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos temporários
+*.swp
