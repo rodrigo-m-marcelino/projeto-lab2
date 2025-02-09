@@ -33,13 +33,12 @@ A estrutura do projeto é organizada da seguinte forma:
 
 Há apenas uma tabela: users
 
-+-------+--------------+------+-----+---------+----------------+
-| Field | Type         | Null | Key | Default | Extra          |
-+-------+--------------+------+-----+---------+----------------+
-| id    | int          | NO   | PRI | NULL    | auto_increment |
-| name  | varchar(255) | YES  |     | NULL    |                |
-| email | varchar(255) | YES  |     | NULL    |                |
-+-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key  | Default |    Extra       |
++-------+--------------+------+-----+---------+-----------------+
+| id    | int          | NO   | PRI  |  NULL   | auto_increment |
+| name  | varchar(255) | YES  |  -   |  NULL   |     -          |
+| email | varchar(255) | YES  |  -   |  NULL   |     -          |
++-------+--------------+------+-----+---------+-----------------+
 
 #### Backend
 
