@@ -1,3 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* base styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand";
+  font-weight: normal;
+  color: #BFD1D9;
+  box-sizing: border-box;
+}
+
+:root{
+  --cor1: #011826;
+  --cor2: #012E40;
+  --cor3: #5D91A6;
+  --cor4: #8FA1AD;
+  --cor5: #BFD1D9;
+}
+
+body{
+  height: 100vh;
+  background-color: aliceblue;
+  background-image: url(https://images.unsplash.com/photo-1736347837458-7cc3697ba57a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+
+/* Navbar */
+
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--cor1);
+}
+.navbar h1 {
+  color: var(--cor1);
+  font-weight: 600;
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+  color: var(--cor1);
+}
+.navbar a:hover {
+  border-bottom: 2.5px solid var(--cor3);
+  font-weight: 550;
+}
+
+/* */
+
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
 
 .content{
   width: 800px;
