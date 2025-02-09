@@ -1,0 +1,18 @@
+.content{
+  width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  position: absolute;
+  background-color:#034f7e5c;
+  backdrop-filter: blur(16px);
+  border-radius: 16px;
+  box-shadow: 2px 2px 2px #5D91A6;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-flow:column wrap;
+  justify-content: center;
+  align-content: space-around;
+
+}
