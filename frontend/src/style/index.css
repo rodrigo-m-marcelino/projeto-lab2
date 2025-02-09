@@ -24,16 +24,18 @@ body{
   background-image: url(https://images.unsplash.com/photo-1736347837458-7cc3697ba57a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   background-position: center center;
   background-size: cover;
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Navbar */
 
 .navbar {
+  height: 60px;
   padding: 20px;
   display: flex;
   align-items: center;
-  max-width: 800px;
+  width: 800px;
   margin: 0 auto;
   border-bottom: 1px solid var(--cor1);
 }
@@ -57,58 +59,54 @@ body{
 
 /* */
 
-.content {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
-
 .content{
   width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  position: absolute;
-  background-color:rgba(240, 248, 255, 0.169);
-  backdrop-filter: blur(16px);
-  border-radius: 16px;
-  box-shadow: 1px 1px 1px #5d91a685;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-flow:column wrap;
-  justify-content: center;
-  align-content: space-around;
+    margin: 40px auto; 
+    padding: 20px;
+    background-color: rgba(240, 248, 255, 0.169);
+    backdrop-filter: blur(16px);
+    border-radius: 16px;
+    box-shadow: 1px 1px 1px #5d91a685;
+    display: flex;
+    flex-flow: column wrap; 
+    justify-content: flex-start; 
+    align-items: center; 
 
 }
 
 /* blog previews / list */
 .home{
   background-color: transparent;
+  color: var(--cor1);
 }
-.user-list{
+
+.home > h1{
+  margin-left: 10px;
   background-color: transparent;
-}
-.user-list > h1 {
-  margin-left: 12px;
-  background-color: transparent;
+  color: var(--cor1);
 }
 
 .user-preview {
   padding: 10px 16px;
   margin: 20px 0;
-  border-bottom: 1px solid #fafafa;
+  border: 1px solid  #8fa1ad65;
   width: 750px;
   border-radius: 16px;
-  
+  background-color:  #bfd1d96c;
 }
 .user-preview:hover {
-  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+  box-shadow: 1px 3px 5px  #012e4057;
+  border: 1.5px solid var(--cor3);
+  
 }
 .user-preview h2 {
   font-size: 20px;
-  color: #f1356d;
+  color: var(--cor1);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.user-preview p {
+  color: var(--cor2);
   margin-bottom: 8px;
 }
 .user-preview a{
