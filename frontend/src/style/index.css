@@ -26,6 +26,8 @@ body{
   background-size: cover;
   display: flex;
   flex-direction: column;
+  background-attachment: fixed;
+  overflow-y:hidden;
 }
 
 /* Navbar */
@@ -35,7 +37,7 @@ body{
   padding: 20px;
   display: flex;
   align-items: center;
-  width: 800px;
+  width: 90%;
   margin: 0 auto;
   border-bottom: 1px solid var(--cor1);
 }
@@ -60,7 +62,7 @@ body{
 /* */
 
 .content{
-  width: 800px;
+    width: 850px;
     margin: 40px auto; 
     padding: 20px;
     background-color: rgba(240, 248, 255, 0.169);
@@ -71,7 +73,8 @@ body{
     flex-flow: column wrap; 
     justify-content: flex-start; 
     align-items: center; 
-
+    height: 385px; /* Ou um valor fixo em px, ex: 600px */
+    overflow-y: auto; /* Adiciona barra de rolagem interna */
 }
 
 /* blog previews / list */
@@ -112,3 +115,21 @@ body{
 .user-preview a{
   text-decoration: none;
 }
+
+/* Para navegadores WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+  background: #bfd1d99b; /* Cor de fundo da área de rolagem */
+  border-radius: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cor3); /* Cor do "polegar" da barra de rolagem */
+  border-radius: 8px; /* Raio do canto do "polegar" */
+}
+
+
+

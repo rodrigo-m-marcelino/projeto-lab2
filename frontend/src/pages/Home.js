@@ -1,14 +1,9 @@
-import { useState, useSyncExternalStore } from "react";
+import { useState} from "react";
 
 const Home = () => {
 
     const [users, setUsers] = useState(
        [ {name: 'Rodrigo', email: ' rodrigo@casasdoventos.com.br', phone: '+55 11 974113775', id: 1},
-         {name: 'Grilinho', email: ' grilinho@casasdoventos.com.br', phone: '+55 11 8463451351', id: 2},
-         {name: 'Grilinho', email: ' grilinho@casasdoventos.com.br', phone: '+55 11 8463451351', id: 3},
-         {name: 'Grilinho', email: ' grilinho@casasdoventos.com.br', phone: '+55 11 8463451351', id: 3},
-         {name: 'Grilinho', email: ' grilinho@casasdoventos.com.br', phone: '+55 11 8463451351', id: 3},
-         {name: 'Grilinho', email: ' grilinho@casasdoventos.com.br', phone: '+55 11 8463451351', id: 3},
          
        ]
     );
