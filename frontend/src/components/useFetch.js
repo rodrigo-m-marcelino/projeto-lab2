@@ -11,20 +11,24 @@ const useFetch = (url) => {
      const [error, setError] = useState(true);
 
     useEffect(() => {
+
+        const abortCont = new AbortController(); //stop the fetch when a component is unmount
+
         // busca no servidor Express via fetch
         // setUsers = res.data
         // se voltar sucesso => setIsPending = false setError = false
         // se voltar erro => setIsPending = false setError = false
         setTimeout(() => {
-            //fetch(servidor)
+            //fetch(url, { signal: abortCont.signal })
             //then(res) - recebe a resposta da requisão fetch
                 // !res.ok -> throw Error
             //then(data) - recebe os dados que foram convertidos no primeiro hen
-            //catch((e) => {}) - captura o erro lançado no primeiro then
+            //catch((e) => {}) - captura o erro lançado no primeiro then e trata o abortError
             
         }, 1000)
     }, [url]);
    
+    /**return () => abortCont.abort() */
     return {data, isPending, error };
    
 }

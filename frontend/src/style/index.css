@@ -47,6 +47,7 @@ body{
 }
 .navbar .links {
   margin-left: auto;
+  font-size: 20px;
 }
 .navbar a {
   margin-left: 16px;
@@ -73,7 +74,7 @@ body{
     flex-flow: column wrap; 
     justify-content: flex-start; 
     align-items: center; 
-    height: 385px; /* Ou um valor fixo em px, ex: 600px */
+    height: 400px; /* Ou um valor fixo em px, ex: 600px */
     overflow-y: auto; /* Adiciona barra de rolagem interna */
 }
 
@@ -89,6 +90,14 @@ body{
   color: var(--cor1);
 }
 
+.loading h2{
+  margin-left: 10px;
+  font-size: 20px;
+  color: var(--cor1);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
 .user-preview {
   padding: 10px 16px;
   margin: 20px 0;
@@ -99,21 +108,41 @@ body{
 }
 .user-preview:hover {
   box-shadow: 1px 3px 5px  #012e4057;
-  border: 1.5px solid var(--cor3);
+  border: 1px solid var(--cor3);
   
 }
 .user-preview h2 {
   font-size: 20px;
   color: var(--cor1);
   font-weight: 500;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 .user-preview p {
   color: var(--cor2);
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 .user-preview a{
   text-decoration: none;
+}
+
+.user-preview button {
+  margin-right: 16px;
+  background: var(--cor1);
+  color:var(--cor5);
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.user-preview button:hover {
+  background: var(--cor1);
+  color:var(--cor5);
+  border: 1.5px solid yellowgreen;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #a1ccde91;
 }
 
 /* Para navegadores WebKit (Chrome, Safari) */
@@ -132,4 +161,54 @@ body{
 }
 
 
+/* CREATE PAGE */
+.create label {
+  text-align: left;
+  display: block;
+  color: var(--cor2)
+}
+.create h1 {
+  text-align: left;
+  display: block;
+  color: var(--cor2);
+  margin-bottom: 24px;
+}
 
+.create input{
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid var(--cor5);
+  box-sizing: border-box;
+  display: block;
+  border-radius: 8px;
+  color: var(--cor1);
+}
+.create button {
+  background: var(--cor1);
+  color:var(--cor5);
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.create button:hover {
+  background: var(--cor1);
+  color:var(--cor5);
+  border: 1px solid var(--cor5);
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #a1ccde91;
+}
+
+div.create button[type="submit"]:disabled {
+  background-color: var(--cor1); /* Cor de fundo cinza claro */
+  border: 1px solid #cccccc; /* Borda cinza clara */
+  color: var(--cor5); /* Cor do texto cinza médio */
+  cursor: default; /* Cursor de "mãozinha" padrão */
+  opacity: 0.7; /* Opacidade para indicar que está desabilitado */
+  /* Outros estilos que você queira adicionar */
+}

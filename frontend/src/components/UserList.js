@@ -1,14 +1,22 @@
-const UserList = ({lista, titulo, handleUpdate, handleDelete}) => {
+import { Link } from "react-router-dom";
+
+const UserList = ({lista, titulo}) => {
+    
+    const handleDelete = (id) => {
+        // chama fetch
+    }
     
     return ( 
     <div className="home">
         <h1>{ titulo }</h1>
         { lista.map((user) => (
             <div className="user-preview" key={user.id}>
-                <h2>{ user.name }</h2>
-                <p>{ user.email }</p>
-                <button type="button" onClick={() => handleUpdate(user.id)}>Update</button>
-                <button type="button" onClick={() => handleDelete(user.id)}>Delete</button>
+                    <h2>{ user.name }</h2>
+                    <p>{ user.email }</p>
+                    <Link to={`/update/${user.id}`}>
+                        <button type="button" >Update</button>
+                    </Link>
+                    <button type="button" onClick={handleDelete}>Delete</button>
             </div>
         ))}
     </div>
