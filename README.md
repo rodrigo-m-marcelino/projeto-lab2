@@ -4,15 +4,13 @@ Este é um projeto de exemplo utilizando React, Express e MySQL para criar uma a
 
 ## Estrutura do Projeto
 
-A estrutura do projeto é organizada da seguinte forma:
 
-
-### Descrição das Pastas e Arquivos
+### Pastas e Arquivos
 
 - **backend/**: Contém o código do servidor Express e a configuração do banco de dados MySQL.
-  - **controllers/**: Define a lógica do controle para diferentes rotas.
-  - **models/**: Define os modelos de dados do Sequelize.
-  - **routes/**: Define as rotas da API.
+  - **models/**: Envia as queries para o banco de dados. Joga para o controller.
+  - **controllers/**: Define a lógica do controle para diferentes rotas. Joga para o routes.
+  - **routes/**: Define os endpoint da API.
   - **app.js**: Ponto de entrada do servidor backend.
   - **db.js**: Configuração da conexão com o banco de dados MySQL.
   - **package.json**: Arquivo de configuração do npm -> Contém os metadados do diretório.
@@ -27,9 +25,9 @@ A estrutura do projeto é organizada da seguinte forma:
     - **index.js**: Ponto de entrada do frontend. Arquivo principal que o React utiliza para renderizar a aplicação
   - **package.json**: Arquivo de configuração do npm -> Contém os metadados do diretório.
 
-### Desenvolvimento
+## Desenvolvimento
 
-#### Banco de Dados
+#### 01. Criação do Banco de Dados
 
 Há apenas uma tabela: users
 
@@ -40,7 +38,6 @@ Há apenas uma tabela: users
 | email | varchar(255) | YES  |  -   |  NULL   |     -          |
 +-------+--------------+------+-----+---------+-----------------+
 
-#### Backend
-
-1. **Inicializar o projeto backend**
+### 02. Desenvolvimento do Frontend
+### 03. Desenvolvimento do Backend
    
