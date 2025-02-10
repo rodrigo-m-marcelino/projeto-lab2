@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const useFetch = (url) => {
     
-    const [data, setData] = useState(null);
+    const [data, setData] = useState();
      const [isPending, setIsPending] = useState(true);
      const [error, setError] = useState(null);
 
@@ -27,13 +27,12 @@ const useFetch = (url) => {
                     console.log(data)
                 })
                 .catch(err => {
-                    if (error.name === 'AbortError'){
+                    if (err && err.name === 'AbortError') { // Verifica se err existe e se err.name existe
                         console.log('fetch aborted')
-                    } else{
-                        setIsPending(false)
-                        setError(err.message)
+                    } else {
+                        setIsPending(false);
+                        setError(err?.message || 'Erro desconhecido'); // Usando optional chaining e fallback
                     }
-                   
                 })
             
         }, 1000)
