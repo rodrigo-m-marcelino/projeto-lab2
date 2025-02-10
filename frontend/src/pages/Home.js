@@ -1,25 +1,25 @@
-import { useState} from "react";
-
+import { useState, useEffect } from "react";
+import UserList from '../components/UserList';
+import useFetch from "../components/useFetch";
 const Home = () => {
 
-    const [users, setUsers] = useState(
-       [ {name: 'Rodrigo', email: ' rodrigo@casasdoventos.com.br', phone: '+55 11 974113775', id: 1},
-         
-       ]
-    );
+    const endpoint = 'http://localhost:'
+
+    const { data, isPending, error } = useFetch(endpoint);
+
+    const handleUpdate = (id) => {
+        // chama fetch
+    }
+
+    const handleDelete = (id) => {
+        // chama fetch
+    }
 
     return (  
         <div className="home">
-            <h1>Home</h1>
-
-            { users.map((user) => (
-                <div className="user-preview" key={user.id}>
-                    <h2>{ user.name }</h2>
-                    <p>{ user.email }</p>
-                    
-                </div>
-            ))}
-
+            {error &&  <div>{ error }</div> }
+            {isPending && <div>Loading...</div>}
+            {data && <UserList lista={data} titulo="Home" handleDelete={handleDelete} handleUpdate={handleUpdate}/> }
         </div>
     );
 }
