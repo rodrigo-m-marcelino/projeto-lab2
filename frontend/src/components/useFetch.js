@@ -2,33 +2,46 @@ import { useState, useEffect } from "react";
 
 const useFetch = (url) => {
     
-    const [data, setData] = useState(
-        [ {name: 'Rodrigo', email: ' rodrigo@casasdoventos.com.br', phone: '+55 11 974113775', id: 1},
-         {name: 'Rogério', email: ' rogerio@casasdoventos.com.br', phone: '+55 11 974113775', id: 2}
-        ]
-     );
+    const [data, setData] = useState(null);
      const [isPending, setIsPending] = useState(true);
-     const [error, setError] = useState(true);
+     const [error, setError] = useState(null);
 
     useEffect(() => {
 
         const abortCont = new AbortController(); //stop the fetch when a component is unmount
 
-        // busca no servidor Express via fetch
-        // setUsers = res.data
-        // se voltar sucesso => setIsPending = false setError = false
-        // se voltar erro => setIsPending = false setError = false
         setTimeout(() => {
-            //fetch(url, { signal: abortCont.signal })
-            //then(res) - recebe a resposta da requisão fetch
-                // !res.ok -> throw Error
-            //then(data) - recebe os dados que foram convertidos no primeiro hen
-            //catch((e) => {}) - captura o erro lançado no primeiro then e trata o abortError
+            fetch(url, {signal: abortCont.signal})
+                // recebe a resposta da requisão fetch
+                .then(res => { 
+                    if (!res.ok) {
+                        throw Error('Fetch falhou');
+                    }
+                    return res.json(); // res is not the actual data -> return another promise
+                })
+                // recebe os dados que foram convertidos no primeiro then
+                .then(data => {
+                    setData(data);
+                    setIsPending(false);
+                    setError(null)
+                    console.log(data)
+                })
+                .catch(err => {
+                    if (error.name === 'AbortError'){
+                        console.log('fetch aborted')
+                    } else{
+                        setIsPending(false)
+                        setError(err.message)
+                    }
+                   
+                })
             
         }, 1000)
+        return () => abortCont.abort();
+
     }, [url]);
    
-    /**return () => abortCont.abort() */
+    /* */
     return {data, isPending, error };
    
 }

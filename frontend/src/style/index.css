@@ -137,8 +137,7 @@ body{
 
 .user-preview button:hover {
   background: var(--cor1);
-  color:var(--cor5);
-  border: 1.5px solid yellowgreen;
+  color: yellowgreen;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;

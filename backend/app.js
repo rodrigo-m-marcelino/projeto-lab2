@@ -3,8 +3,11 @@ const app = express(); // Cria uma aplicação express (uma função) que config
 const port = 5000; 
 const db = require('./db');
 const router = require('./routes/index');
+const cors = require('cors')
 
 router(app);
+
+app.use(cors);
 
 // Colocando o servidor no ar (aguardando conexões/rotas => AVISO: Cannot GET /) na porta passada como argumento
 app.listen(port, () => {

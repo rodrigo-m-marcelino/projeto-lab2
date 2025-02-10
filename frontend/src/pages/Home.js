@@ -3,7 +3,7 @@ import UserList from '../components/UserList';
 import useFetch from "../components/useFetch";
 const Home = () => {
 
-    const endpoint = 'http://localhost:'
+    const endpoint = 'http://localhost:5000/users'
 
     const { data, isPending, error } = useFetch(endpoint);
 
