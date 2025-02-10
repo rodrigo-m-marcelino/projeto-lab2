@@ -14,7 +14,7 @@ A estrutura do projeto é organizada da seguinte forma:
   - **models/**: Define os modelos de dados do Sequelize.
   - **routes/**: Define as rotas da API.
   - **app.js**: Ponto de entrada do servidor backend.
-  - **database.js**: Configuração da conexão com o banco de dados MySQL.
+  - **db.js**: Configuração da conexão com o banco de dados MySQL.
   - **package.json**: Arquivo de configuração do npm -> Contém os metadados do diretório.
 
 - **frontend/**: Contém o código da aplicação React.
