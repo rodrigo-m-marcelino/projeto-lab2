@@ -6,7 +6,7 @@ const Home = () => {
     const endpoint = 'http://localhost:5000/users'
 
     const { data, isPending, error } = useFetch(endpoint);
-
+    
     return (  
         <div className="home">
             {error &&  <div>{ error }</div> }

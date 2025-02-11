@@ -1,9 +1,20 @@
 import { Link } from "react-router-dom";
 
 const UserList = ({lista, titulo}) => {
-    
-    const handleDelete = (id) => {
-        // chama fetch
+
+
+    const handleDelete = (id, e) => {
+        fetch( `http://localhost:5000/users/${id}`, {
+            method: 'DELETE',
+        })
+        .then(() => {
+            console.log('User deletado')
+            console.log(id)
+            window.location.reload();   
+        })
+        .catch(error => {
+            console.error('Erro ao deletar usuário:', error);
+        });
     }
     
     return ( 
@@ -16,7 +27,7 @@ const UserList = ({lista, titulo}) => {
                     <Link to={`/update/${user.id}`}>
                         <button type="button" >Update</button>
                     </Link>
-                    <button type="button" onClick={handleDelete}>Delete</button>
+                    <button type="button" onClick={() => {handleDelete(user.id)}}>Delete</button>
             </div>
         ))}
     </div>

@@ -4,7 +4,7 @@ class UserModel {
 
     // CREATE
     create(name, email){
-        const query = `INSERT INTO users (name, email) VALUES (${name}, ${email})`;
+        const query = `INSERT INTO users (name, email) VALUES ('${name}',' ${email}')`;
         return new Promise((res, rej) => {
             db.query(query, (err, results) => {
                 if (err) {
@@ -48,7 +48,7 @@ class UserModel {
 
     // UPDATE
     update(name, email, id){
-        const query = `UPDATE users SET name = ${name}, email = ${email} WHERE id = ${id}`;
+        const query = `UPDATE users SET name = '${name}', email = '${email}' WHERE id = ${id}`;
         return new Promise((res, rej) => {
             db.query(query, (err, results) => {
                 if (err) {

@@ -4,7 +4,8 @@ const userController = require('../controllers/userController');
 
 // CREATE
 router.post('/users', (req, res) => {
-    userController.create(req.body) // Passando o body para o controller
+    const { name, email } = req.body;
+    userController.create(name, email) // Passando o body para o controller
       .then(user => res.status(201).json(user)) // Status 201 para criação
       .catch(error => res.status(400).json(error));
 });
@@ -32,7 +33,8 @@ router.get('/users/:id', (req, res) => {
 // UPDATE
 router.put('/users/:id', (req, res) => {
     const { id } = req.params;
-    userController.update(id, req.body) // Passando o body para o controller
+    const { name, email } = req.body;
+    userController.update( name, email, id) // Passando o body para o controller
       .then(user => res.status(200).json(user))
       .catch(error => res.status(400).json(error));
 });

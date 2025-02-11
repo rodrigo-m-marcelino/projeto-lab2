@@ -8,12 +8,12 @@ class userController {
         return userModels.readUnique(id);
     }
 
-    create () {
-        return userModels.create();
+    create (name, email) {
+        return userModels.create(name , email);
     }
 
-    update (id) {
-        return userModels.update(id);
+    update (name, email, id) {
+        return userModels.update(name,email,id);
     }
 
     delUser (id) {
