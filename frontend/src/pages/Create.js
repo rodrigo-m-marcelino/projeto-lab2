@@ -9,6 +9,7 @@ const Create = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [isPending, setIsPending] = useState(false);
+    const [erro, setErro] = useState(null);
 
     const navigate = useNavigate();
     const goHome = () => {
@@ -36,6 +37,7 @@ const Create = () => {
         })
         .catch(error => {
             console.error('Erro ao criar usuário:', error);
+            setErro(error)
         });
     
     }
@@ -50,6 +52,7 @@ const Create = () => {
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                 { !isPending && <button type="submit">Create User</button> }
                 { isPending && <button type="submit" key='creating-btn' disabled>Creating...</button> }
+                { erro && <div> CRIA O USER DIREITO NESSA PORRA </div>}
             </form>
            
         </div>

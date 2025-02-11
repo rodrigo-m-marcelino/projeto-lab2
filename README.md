@@ -31,12 +31,10 @@ Este é um projeto de exemplo utilizando React, Express e MySQL para criar uma a
 
 Há apenas uma tabela: users
 
-| Field | Type         | Null | Key  | Default |    Extra       |
-+-------+--------------+------+-----+---------+-----------------+
-| id    | int          | NO   | PRI  |  NULL   | auto_increment |
-| name  | varchar(255) | YES  |  -   |  NULL   |     -          |
-| email | varchar(255) | YES  |  -   |  NULL   |     -          |
-+-------+--------------+------+-----+---------+-----------------+
+Field      Type           Null     Key        Extra
+ id         int            No      PRI     auto_increment
+ name    varchar(255)     Yes       -           -
+ email   varchar(255)     Yes       -        UNIQUE
 
 ### 02. Desenvolvimento do Frontend
 ### 03. Desenvolvimento do Backend

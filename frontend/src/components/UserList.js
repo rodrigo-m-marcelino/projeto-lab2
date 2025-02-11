@@ -25,9 +25,9 @@ const UserList = ({lista, titulo}) => {
                     <h2>{ user.name }</h2>
                     <p>{ user.email }</p>
                     <Link to={`/update/${user.id}`}>
-                        <button type="button" >Update</button>
+                        <button type="button" className={'update-btn'} >Update</button>
                     </Link>
-                    <button type="button" onClick={() => {handleDelete(user.id)}}>Delete</button>
+                    <button type="button" className={'delete-btn'} onClick={() => {handleDelete(user.id)}}>Delete</button>
             </div>
         ))}
     </div>
