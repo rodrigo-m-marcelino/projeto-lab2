@@ -1,15 +1,19 @@
 const express = require('express');
-const app = express(); // Cria uma aplicação express (uma função) que configura rotas, middlewares e etc.
-const port = 5000; 
+const app = express();
+const port = 5000;
 const db = require('./db');
 const router = require('./routes/index');
-const cors = require('cors')
+const cors = require('cors');
 
-router(app);
+const corsOptions = {
+    origin: 'http://localhost:3000' // **VERIFIQUE SE ESTA PORTA ESTÁ CORRETA**
+};
 
-app.use(cors);
+app.use(cors(corsOptions));  // Use as opções de CORS aqui
+app.use(express.json()); // Não esqueça de adicionar o middleware para o body parser
 
-// Colocando o servidor no ar (aguardando conexões/rotas => AVISO: Cannot GET /) na porta passada como argumento
+router(app); // As rotas devem vir *depois* do CORS e do body-parser
+
 app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+    console.log(`Servidor rodando em http://localhost:${port}`);
 });

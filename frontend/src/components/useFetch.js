@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 
 const useFetch = (url) => {
     
-    const [data, setData] = useState();
-     const [isPending, setIsPending] = useState(true);
-     const [error, setError] = useState(null);
+    const [data, setData] = useState(null);
+    const [isPending, setIsPending] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
 
@@ -17,7 +17,12 @@ const useFetch = (url) => {
                     if (!res.ok) {
                         throw Error('Fetch falhou');
                     }
-                    return res.json(); // res is not the actual data -> return another promise
+                    // Verifica o Content-Type para saber como lidar com a resposta
+                    if (res.headers.get('Content-Type')?.includes('application/json')) {
+                        return res.json();  // res is not the actual data -> return another promise
+                    } else {
+                        return res.text(); // Ou outro método, dependendo do tipo de resposta
+                    }
                 })
                 // recebe os dados que foram convertidos no primeiro then
                 .then(data => {

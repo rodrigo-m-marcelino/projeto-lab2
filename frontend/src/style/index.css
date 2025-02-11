@@ -74,7 +74,7 @@ body{
     flex-flow: column wrap; 
     justify-content: flex-start; 
     align-items: center; 
-    height: 400px; /* Ou um valor fixo em px, ex: 600px */
+    height: 550px; /* Ou um valor fixo em px, ex: 600px */
     overflow-y: auto; /* Adiciona barra de rolagem interna */
 }
 
@@ -161,10 +161,16 @@ body{
 
 
 /* CREATE PAGE */
+.create {
+  margin-top: 100px;
+  width: 500px;
+}
 .create label {
   text-align: left;
   display: block;
-  color: var(--cor2)
+  color: var(--cor2);
+  margin-left: 2px;
+  font-weight: 500;
 }
 .create h1 {
   text-align: left;
@@ -182,6 +188,7 @@ body{
   display: block;
   border-radius: 8px;
   color: var(--cor1);
+  font-size: 16px;
 }
 .create button {
   background: var(--cor1);
@@ -191,6 +198,7 @@ body{
   border-radius: 8px;
   cursor: pointer;
   margin-top: 8px;
+  font-size: 16px;
 }
 
 .create button:hover {

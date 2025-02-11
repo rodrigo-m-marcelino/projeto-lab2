@@ -1,16 +1,25 @@
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import useFetch from "../components/useFetch";
 
 const UserUpdate = () => {
     const { id } = useParams(); // Grab parameters
 
     // useFetch para recuperar os dados detalhados de cada do user
-
-    const [name, setName] = useState();
-    const [email, setEmail] = useState();
-    const [isPending, setIsPending] = useState(false);
+    const endpoint = `http://localhost:5000/users/${id}`
+    const { data, isPending, error } = useFetch(endpoint);
+   
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
     
+    useEffect(() => {
+        if(!isPending){
+            setName(data[0].name);
+            setEmail(data[0].email);
+        }
+    }, [data, isPending])
+
     const navigate = useNavigate();
     const goHome = () => {
         navigate('/');
@@ -27,17 +36,22 @@ const UserUpdate = () => {
 
     return ( 
         <div className="create">
-        <h1>Update User</h1>
-        <form onSubmit={handleSubmit}>
-            <label>Nome: </label>
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)}/>
-            <label>E-mail: </label>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-            { !isPending && <button type="submit">Update User</button> }
-            { isPending && <button type="submit" key='creating-btn' disabled>Creating...</button> }
-        </form>
-        
-    </div>
+            {error &&  <div>{ error }</div> }
+            {isPending && <div className="loading"><h2>Loading...</h2></div>}
+            {data && 
+                <div>
+                    <h1>Update User - {id} </h1>
+                    <form onSubmit={handleSubmit}>
+                        <label>Nome: {data.name }</label>
+                        <input type="text" value={name} onChange={(e) => setName(e.target.value)}/>
+                        <label>E-mail: </label>
+                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                        { !isPending && <button type="submit">Update User</button> }
+                        { isPending && <button type="submit" key='creating-btn' disabled>Creating...</button> }
+                    </form>
+                </div>
+            }
+        </div>
      );
 }
  
