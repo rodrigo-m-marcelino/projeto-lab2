@@ -9,7 +9,7 @@ class UserModel {
             db.query(query, (err, results) => {
                 if (err) {
                   console.error('Erro ao criar usuários:', err);
-                  res.status(500).send('Erro ao criar usuários');
+                  rej('Erro ao criar usuários');
                   return;
                 }
                 res(results);
